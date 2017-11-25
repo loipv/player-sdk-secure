@@ -1,0 +1,16 @@
+{
+    "name": "vcplayer/sdk-secure",
+    "description": "Sdk generate player secure token",
+    "authors": [
+        {
+            "name": "loipv",
+            "email": "loipv792@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SecureSDK\\": "src"
+        }
+    },
+    "require": {}
+}
