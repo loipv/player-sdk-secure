@@ -2,27 +2,30 @@
 
 ## Install sdk
 
-> composer require player/sdk-secure
+> composer require loipv/player-sdk-secure
 
 ## Use sdk
 
 ```php
 <?php
 
-use VCPlayerJWT/VCPlayer;
+use SecureSDK/SecureSDK;
 
 // Init sdk
 $appkey = 'appkey';
 $secretkey = 'secretkey';
 $playerId = 'pid';
-$vcplayer = new VCPlayer(appkey, secretkey, playerId);
+$secure = new SecureSDK(appkey, secretkey, playerId);
 
 // If you change token expire time, default: 60s
 
 $expiresIn = 3600; // 1h
-$vcplayer.setExpiresIn($expiresIn);
+$secure.setExpiresIn($expiresIn);
+
+// Or generate token not expired
+$secure.setIngnoreExpiration(true);
 
 // Get secure token
-$sToken = vcplayer.getSecureToken();
+$sToken = secure.getSecureToken();
 
 ```
