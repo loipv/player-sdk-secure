@@ -133,7 +133,7 @@ class SecureSDK {
 	 * @return string
 	 */
 	public function getUserAgent() {
-		if ($ua) return $ua;
+		if ($this->ua) return $this->ua;
 		$httpHeaders = $this->getHttpHeaders();
 		return isset($httpHeaders['HTTP_USER_AGENT'])? $httpHeaders['HTTP_USER_AGENT'] : '';
 	}
@@ -144,12 +144,10 @@ class SecureSDK {
 	 */
 	public function getJWTToken() {
 		$key = $this->getJWTKey();
-		$ua = getUserAgent();
 		$iat = time();
 		$data = [
 				'appkey' => $this->appkey,
 				'player' => $this->playerId,
-				'ua' => $ua,
 				'ignoreExpiration' => $this->ignoreExpiration;
 		];
 		$payload = array_merge([ 'iat' => $iat, 'exp' => $iat + $this->expiresIn ], $data);
