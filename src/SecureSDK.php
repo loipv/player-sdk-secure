@@ -44,7 +44,7 @@ class SecureSDK {
 	 * Secure uri
 	 * @var string $sUri
 	 */
-	private $sUri = 'https://adminplayer.sohatv.vn';
+	private $sUri = '/';
 	
 	/**
 	 * Http headers
@@ -100,7 +100,7 @@ class SecureSDK {
 	 * Set base url secure token
 	 * @param string $sUri
 	 */
-	public function setSecureUri($sUri = ''){
+	public function setSecureUri($sUri = '/'){
 		$this->sUri = $sUri;
 	}
 	
@@ -159,7 +159,7 @@ class SecureSDK {
 	 * @return string
 	 */
 	public function getSecureToken() {
-		$data = [$this->sUri, 'secure/verify', $this->appkey, $this->playerId, $this->getJWTToken()];
+		$data = [$this->sUri.'secure/verify', $this->appkey, $this->playerId, $this->getJWTToken()];
 		return base64_encode(join('/', $data));
 	}
 }
