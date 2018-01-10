@@ -32,7 +32,7 @@ class SecureSDK {
 	 * Expires time
 	 * @var string
 	 */
-	private $expiresIn = 60; // Expire in 60s
+	private $expiresIn = 120; // Expire in 60s
 
 	/**
 	 * Ingnore expiration
@@ -84,7 +84,7 @@ class SecureSDK {
 	 * Set token life time
 	 * @param number $expiresIn
 	 */
-	public function setExpiresIn($expiresIn = 60) {
+	public function setExpiresIn($expiresIn = 120) {
 		$this->expiresIn = $expiresIn;
 	}
 
